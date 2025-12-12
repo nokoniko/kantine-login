@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}Hjem{% endblock %}
+{% block content %}
+
+<div class="banner" style="background-image: url({{ url_for('static', filename='img/bakgrund/bilde.jpg') }});">
+    <h1 class="banner-tittel">Vil du spise hos oss?</h1>
+</div>
+
+<h2 class="title-index">Et bærekraftig valg</h2>
+<p class="brodtekst">
+    Kantinen på Akademiet satser på <strong>bærekraft og kvalitet</strong>.<br>
+    Vi bruker <strong>kortreiste råvarer</strong> der det er mulig, reduserer matsvinn<br>
+    og velger sesongbaserte ingredienser for å gi deg<br>
+    smakfulle retter med lavt klimaavtrykk.<br><br>
+    Hos oss finner du en variert meny med franske retter,<br>
+    supper, salater og vegetariske alternativer – alt laget med omtanke som sirkulerer ver dag. Lurer du på hva vi har i dag? klik  <a href="{{ url_for('dagens') }}">her →</a>
+</p>
+
+<h2 class="title-index">Et glimt av menyen</h2>
+<div class="boks-konteiner">
+    <div class="boks">
+        <img src="{{ url_for('static', filename='img/meny/andeconfit.jpeg') }}" alt="Andeconfit" class="boks-bilde">
+        <strong>Andeconfit</strong>
+        <p>Sprøstekt andelår med kremet potetpuré</p>
+    </div>
+    <div class="boks">
+        <img src="{{ url_for('static', filename='img/varer/epplejuice.jpg') }}" alt="Coq au vin" class="boks-bilde">
+        <strong>Epplejuice</strong>
+        <p>Epplejuice til maten for smakfull </p>
+    </div>
+    <div class="boks">
+        <img src="{{ url_for('static', filename='img/varer/brownie.webp') }}" alt="brownie" class="boks-bilde">
+        <strong>Brownie</strong>
+        <p>En delig liten diser for etter maten</p>
+    </div>
+    <p style="padding-left: 60px;">Er du mer intrisert om hva vi har? Se hele menyen <a href="{{ url_for('meny') }}">her →</a></p>
+</div>
+
+<h2 class="title-index">Pris</h2>
+<p class="brodtekst">
+    Nyt fersk kantinemat hver dag for kun <strong>1000 kr per måned</strong>.<br>
+    Ønsker du heller å spise av og til? Enkeltretter koster <strong>185 kr</strong>.<br><br>
+</p>
+
+{% endblock %}

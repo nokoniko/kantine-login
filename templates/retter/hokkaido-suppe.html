@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Hokkaido-suppe{% endblock %}
+{% block content %}
+<div class="banner" style="background-image: url({{ url_for('static', filename='img/meny/hokkaido_suppe.jpeg') }});">
+    <h1 class="banner-tittel">Hokkaido-suppe</h1>
+</div>
+
+<p class="brodtekst">
+    Hokkaido-suppe er en <strong>varm og kremet gresskarsuppe</strong><br>
+    laget på den søte og aromatiske Hokkaido-gresskaren. <br> 
+    Den har en <strong>silkemyk konsistens</strong><br>
+    og en mild, rund smak som passer perfekt på kalde dager. <br> 
+    Hos oss serveres den med en liten dæsj fløte og nybakt brød ved siden av,<br>
+     for en <strong>mettende og smakfull opplevelse</strong>. <br> 
+    Suppen er både <strong>vegetarvennlig</strong> og laget med omtanke for gode, naturlige råvarer.
+</p>
+
+{% endblock %}

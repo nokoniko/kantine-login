@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Coq au vin{% endblock %}
+{% block content %}
+<div class="banner" style="background-image: url({{ url_for('static', filename='img/meny/coq_au_vin.jpg') }});">
+    <h1 class="banner-tittel">Coq au Vin</h1>
+</div>
+
+<p class="brodtekst">
+    En rustikk og tradisjonsrik fransk gryterett hvor kylling blir braisert i rødvin, typisk fra Burgund. <br>
+    Sammen med bacon, sopp og løk utvikler retten en <strong>rik og aromatisk saus</strong> som gjør kyllingen utrolig mør. <br>
+    Coq au Vin er et strålende eksempel på hvordan enkle råvarer kan forvandles til et <strong>elegant og smakfullt måltid</strong>.
+</p>
+{% endblock %}

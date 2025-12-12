@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Kontakt{% endblock %}
+
+{% block content %}
+<h2 class="title-index">Kontakt personalet til kantinen</h2>
+
+<div class="boks-konteiner">
+    {% for person in kontakter %}
+    <div class="kontakt-boks">
+        <img src="{{ url_for('static', filename='img/personer/' ~ person.bilde) }}" alt="{{ person.navn }}" class="kontakt-bilde">
+        <strong>{{ person.navn }}</strong>
+        <p>stilling: {{ person.stilling }}</p>
+        <p>telefon: {{person.tlf}}</p>
+        <p>epost: {{person.epost}}</p>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

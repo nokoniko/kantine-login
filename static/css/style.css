@@ -1,0 +1,182 @@
+html {
+    height: 100%; /* Sørger for at html-elementet fyller hele høyden */
+    overflow-x: hidden; /* Forhindrer horisontal scrollbar forårsaket av .banner */
+}
+
+body {
+    margin: 0; 
+    font-family: 'Inter', sans-serif;
+    background: #fff;
+    display: flex; /* Aktiverer Flexbox for body */
+    margin-left: 70px;
+    flex-direction: column; /* Stabler elementene vertikalt (topbar, main, footer) */
+    min-height: 100vh; /* Sørger for at body er minst like høy som skjermen */
+}
+
+/* Vi lager en egen klasse for brødtekst for å unngå at alle <p>-elementer får unødvendig padding. */
+/* Dette er mer spesifikt og forutsigbart enn å style alle <p> globalt. */
+.brodtekst {
+    padding-left: 60px; /* Gir ekstra innrykk til lengre tekstblokker. */
+}
+
+.title-index {
+    font-size: 48px;
+    padding-left: 60px;
+}
+
+.topbar {
+    font-family: Arial, Helvetica;
+    font-size: 24px;
+    font-weight: bold;
+    display: flex; /* Bruker flexbox for å enkelt justere elementene (logo og nav) på linje. */
+    justify-content: flex-start; /* Plasserer elementene i starten av flex-containeren (venstrejustert). */
+    position: relative; /* Nødvendig for at 'position: absolute' på nav-elementet skal fungere i forhold til denne topbaren. */
+    align-items: center; /* Sentrerer elementene vertikalt i topbaren. */
+    padding-bottom: 60px; /* Legger til luft under topbaren. */
+    padding-top: 30px; /* Flytter padding hit fra body */
+}
+
+.logo img {
+    height: 72px;
+    width: auto;
+    display: block;
+    padding-right: 25px;
+}
+
+.logo {
+    margin-left: 90px; /* juster verdien for mer/mindre flytting */
+}
+
+.topbar nav {
+    /* Dette er en vanlig metode for å sentrere et element perfekt: */
+    position: absolute; /* Løsriver nav fra den normale dokumentflyten. */
+    left: 50%; /* Flytter startpunktet til nav til midten av topbaren. */
+    transform: translateX(-50%); /* Flytter nav 50% av sin egen bredde tilbake mot venstre, noe som sentrerer den. */
+}
+
+nav ul {
+    display: flex;
+    gap: 16px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+.footer {
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: rgba(255, 166, 0, 0.672);
+}
+
+/* Denne klassen er på <main>-elementet vi la til i base.html */
+.content-wrapper {
+    flex-grow: 1; /* Forteller innholdet at det skal vokse og ta all ledig plass, og dermed dytte footeren ned */
+    padding-left: 51px;
+    padding-right: 51px;
+}
+
+.boks-konteiner {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Automatisk antall kolonner */
+    gap: 25px;
+    padding: 30px;
+    }
+
+
+.boks {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    width: 350px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+}
+
+.kontakt-boks { 
+    background-color: #fff; 
+    border-radius: 10px; 
+    padding: 15px; 
+    width: 350px; 
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1); 
+    font-family: 'Inter', sans-serif; 
+    text-align: center; 
+}
+
+.boks-bilde {
+    width: 100%;
+    border-radius: 10px;
+    height: 180px;
+    object-fit: contain; /* bildet passer inn i boksen uten å beskjæres, men kan få hvite kanter */
+    background-color: #fff; /* kan fylle tomrommet med hvit bakgrunn */
+}
+
+.kontakt-bilde {
+    width: 100%;
+    height: 500px;
+    object-fit: cover; /* Sørger for at bildet dekker hele rammen uten å strekkes. Det kan bli beskåret. */
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.boks .boks-2 strong {
+    font-size: 18px;
+    color: #000;
+}
+
+.boks .boks-2 p {
+    margin: 5px 0;
+    font-size: 14px;
+    padding-left: 0; /* Nullstiller padding for <p>-elementer inne i .rett-boks for å sikre sentrering. */
+}
+
+.page-meny .boks:hover {
+    transform: scale(1.05);
+}
+
+
+/* Stiler for banner på enkeltsider for retter */
+.banner {
+    /* Bruker viewport width for å strekke banneret over hele skjermbredden, 
+       og calc() for å trekke fra paddingen i .content-wrapper og marginen i body. */
+    width: 100vw; /* Setter bredden til 100% av nettleservinduet */
+    margin-left: -121px; /* Kompenserer for body-margin (70px) + content-padding (51px) */
+    height: 300px; /* Økt høyde for mer visuell effekt */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px; /* Økt avstand til teksten under. margin-top/right/bottom fungerer som før. */
+    position: relative; /* Nødvendig for overlay */
+    color: white; /* Setter tekstfarge for alt inni */
+}
+
+/* Legger til et mørkt, gjennomsiktig lag over banneret for bedre tekstlesbarhet */
+.banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4); /* Mørkere for bedre kontrast */
+}
+
+.banner-tittel {
+    font-size: 48px; /* Større tittel */
+    font-family: 'Inter', sans-serif;
+    position: relative; /* Sørger for at tittelen ligger over overlayet */
+    z-index: 1;
+    
+}

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Dagens meny{% endblock %}
+
+{% block content %}
+<div class="page-meny">
+<div class="banner" style="background-image: url({{ url_for('static', filename='img/bakgrund/kjøken.png') }});">
+    <h1 class="banner-tittel">Retter vi tilbyr</h1>
+</div>
+
+<div class="boks-konteiner">
+    <!--Bruker en for løkke-->
+    {% for rett in menyen %}
+    <div class="boks">
+        <a href="{{ url_for('rett', slug=rett.slug) }}" style="text-decoration: none; color: inherit;">
+            <img src="{{ url_for('static', filename='img/meny/' ~ rett.bilde) }}" alt="{{ rett.navn }}" class="boks-bilde">
+            <strong>{{ rett.navn }}</strong>
+            <p>Dag: {{ rett.dag }}</p>
+            <p>Kategori: {{ rett.kategori }}</p>
+            {% if rett.allergier %}
+                <p><em>Allergier:</em> {{ rett.allergier | join(', ') }}</p>
+            {% endif %}
+        </a>
+    </div>
+    {% endfor %}
+</div>
+</div>
+{% endblock %}

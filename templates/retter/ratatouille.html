@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Ratatouille{% endblock %}
+{% block content %}
+<div class="banner" style="background-image: url({{ url_for('static', filename='img/meny/ratatouille.jpg') }});">
+    <h1 class="banner-tittel">Ratatouille</h1>
+</div>
+
+<p class="brodtekst">
+    En fargerik og livlig grønnsaksgryte med opprinnelse fra Provence. <br>
+    Aubergine, squash, paprika, løk og tomater blir forsiktig kokt sammen med hvitløk og friske urter. <br>
+    Resultatet er en <strong>sunn, lett og utrolig smakfull rett</strong> som feirer det beste av sommerens grønnsaker.
+</p>
+{% endblock %}

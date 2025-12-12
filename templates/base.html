@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="no">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/logo/logo.png') }}">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    <body>
+        <div class="topbar">
+            <header class="logo"><img src="{{ url_for('static', filename='img/logo/logo.png') }}" alt="Akademiet logo"></header>
+            <nav>
+                <ul>
+                    <li><a href="/">Hjem</a></li>
+                    <li><a href="/meny">Meny</a></li>
+                    <li><a href="/varer">Varer</a></li>
+                    <li><a href="/kontakt">Kontakt</a></li>
+                    <li><a href="tilbakemelding">Tilbakemeldinger</a></li>
+                </ul>
+            </nav>
+        </div>
+        <main class="content-wrapper">
+            {% block content %}{% endblock %}
+        </main>
+        <footer class="footer">lagd av meg Nikolai pai©</footer>
+    </body>
+</html>

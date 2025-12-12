@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Logg inn</h2>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    {{ form.brukernavn.label }} {{ form.brukernavn }}<br>
+    {{ form.passord.label }} {{ form.passord }}<br>
+    {% for error in form.brukernavn.errors %}
+        <p style="color:red">{{ error }}</p>
+    {% endfor %}
+    {{ form.submit }}
+</form>
+{% endblock %}

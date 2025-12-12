@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Varer{% endblock %}
+
+{% block content %}
+<div class="banner" style="background-image: url({{ url_for('static', filename='img/bakgrund/kantine.JPG') }});">
+    <h1 class="banner-tittel">Faste varer vi tilbyr</h1>
+</div>
+
+<div class="boks-konteiner">
+    {% for vare in varere %}
+    <div class="boks">
+        <img src="{{ url_for('static', filename='img/varer/' ~ vare.bilde) }}" alt="{{ vare.navn }}" class="boks-bilde">
+        <strong>{{ vare.navn }}</strong>
+        <p>Kategori: {{ vare.kategori }}</p>
+        <p>Pris: {{ vare.pris }}kr</p>
+        {% if vare.allergier %}
+            <p><em>Allergier:</em> {{ vare.allergier | join(', ') }}</p>
+        {% endif %}
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
