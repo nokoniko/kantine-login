@@ -17,24 +17,83 @@ Dette er en enkel webapplikasjon for en kantine, bygget med Flask. Applikasjonen
 ## Prosjektstruktur
 
 ```
-kantine-login/
-├── static/
-│   └── img/
-│       └── meny/
-│           ├── andeconfit.jpeg
-│           ├── boeuf_bourguignon.jpg
-│           └── ... (bilder for rettene)
-├── templates/
-│   ├── login/
+├── LICENSE
+├── README.md
+├── app.py
+├── app.wsgi
+├── config
+├── messages
+│   └── messages.json
+├── static
+│   ├── css
+│   │   └── style.css
+│   └── img
+│       ├── bakgrund
+│       │   ├── bilde.jpg
+│       │   ├── kantine.JPG
+│       │   └── kjøken.png
+│       ├── logo
+│       │   └── logo.png
+│       ├── meny
+│       │   ├── andeconfit.jpeg
+│       │   ├── boeuf_bourguignon.jpg
+│       │   ├── coq_au_vin.jpg
+│       │   ├── hokkaido_suppe.jpeg
+│       │   └── ratatouille.jpg
+│       ├── personer
+│       │   ├── Mio.jpeg
+│       │   ├── audun.jpeg
+│       │   ├── ebbe.JPG
+│       │   ├── helene.jpeg
+│       │   ├── jabok.jpeg
+│       │   ├── ludvig.jpeg
+│       │   ├── marcus.jpeg
+│       │   ├── markus.jpeg
+│       │   ├── markus2.JPG
+│       │   ├── nikolai.jpeg
+│       │   ├── sebastian.jpeg
+│       │   ├── simen.jpeg
+│       │   └── thea.JPG
+│       └── varer
+│           ├── Croissant.jpg
+│           ├── bagguete.jpg
+│           ├── brownie.webp
+│           ├── epplejuice.jpg
+│           ├── fruktBeger.jpg
+│           ├── kaffe.jpg
+│           ├── notter.jpg
+│           ├── salat.Jpeg
+│           ├── sjokolademelk.jpeg
+│           ├── te.png
+│           ├── vann.jpg
+│           └── yoghurt.jpeg
+├── templates
+│   ├── base.html
+│   ├── forms
+│   │   └── tilbakemelding.html
+│   ├── hjem
+│   │   └── hjem.html
+│   ├── kantine
+│   │   ├── kontakt.html
+│   │   ├── meny.html
+│   │   └── varer.html
+│   ├── login
 │   │   ├── index.html
 │   │   ├── login.html
 │   │   └── register.html
-│   ├── retter/
-│   │   ├── andeconfit.html
-│   │   └── ... (maler for hver rett)
-│   └── base.html
-├── app.py          # Hovedapplikasjonen (antatt)
-└── requirements.txt  # Prosjektavhengigheter (antatt)
+│   └── retter
+│       ├── README.md
+│       ├── andeconfit.html
+│       ├── boeuf-bourguignon.html
+│       ├── coq_au_vin.html
+│       ├── coqunvin.html
+│       ├── hokkaido-suppe.html
+│       └── ratatouille.html
+└── utils
+    ├── data.py
+    ├── forms.py
+    ├── hjelp.py
+    └── liste.py
 ```
 
 ## Oppsett og Kjøring
